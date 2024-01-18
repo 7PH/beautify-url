@@ -1,12 +1,12 @@
 {
   "name": "beautify-url",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Opinionated library that transforms your URLs into shorter, more aesthetic forms without compromising their functionality or security",
   "type": "module",
-  "main": "./lib/src/index.js",
-  "types": "./lib/src/index.d.ts",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "files": [
-    "/lib/src",
+    "/lib",
     "/dist"
   ],
   "scripts": {
@@ -40,5 +40,8 @@
       "limit": "0.3 kB",
       "path": "dist/beautify-url.min.js"
     }
-  ]
+  ],
+  "dependencies": {
+    "beautify-url": "^0.1.1"
+  }
 }
