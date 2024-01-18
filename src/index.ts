@@ -1,6 +1,9 @@
 const LINK_PATHNAME_TRUNCATE_LENGTH = 14;
 const LINK_SEARCH_TRUNCATE_LENGTH = 10;
 
+const ELLIPSIS = '⋯';
+const ELLIPSIS_LENGTH = 1;
+
 /**
  * Beautify a given URL protocol
  */
@@ -43,11 +46,11 @@ function beautifyPath(path: string) {
 
     // If last path part is short enough, return it
     if (lastPart.length < LINK_PATHNAME_TRUNCATE_LENGTH && pathParts.length > 2) {
-        return `/[..]/${lastPart}`;
+        return `/${ELLIPSIS}/${lastPart}`;
     }
 
     // If last path part is long, truncate it
-    return `/[..]${lastPart.substring(lastPart.length - LINK_PATHNAME_TRUNCATE_LENGTH + 4)}`;
+    return `/${ELLIPSIS}${lastPart.substring(lastPart.length - LINK_PATHNAME_TRUNCATE_LENGTH + ELLIPSIS_LENGTH)}`;
 }
 
 /**
@@ -66,7 +69,7 @@ function beautifySearch(rawSearch: string) {
     }
 
     // If long search, truncate it
-    return `?[..]${search.substring(search.length - LINK_SEARCH_TRUNCATE_LENGTH + 5)}`;
+    return `?${ELLIPSIS}${search.substring(search.length - LINK_SEARCH_TRUNCATE_LENGTH + ELLIPSIS_LENGTH)}`;
 }
 
 /**

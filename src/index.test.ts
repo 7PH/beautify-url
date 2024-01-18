@@ -29,9 +29,9 @@ describe('path', () => {
     });
 
     it('shorten long path', () => {
-        expect(beautifyUrl('https://google.com/long/path/with/many/segments/and/parameters')).toBe('google.com/[..]/parameters');
-        expect(beautifyUrl('https://google.com/with-very-long-last-part/')).toBe('google.com/[..]-last-part');
-        expect(beautifyUrl('https://google.com/with-very-long-last-part')).toBe('google.com/[..]-last-part');
+        expect(beautifyUrl('https://google.com/long/path/with/many/segments/and/parameters')).toBe('google.com/⋯/parameters');
+        expect(beautifyUrl('https://google.com/with-very-long-last-part/')).toBe('google.com/⋯ong-last-part');
+        expect(beautifyUrl('https://google.com/with-very-long-last-part')).toBe('google.com/⋯ong-last-part');
     });
 });
 
@@ -42,12 +42,28 @@ describe('query', () => {
 
     it('keep short query', () => {
         expect(beautifyUrl('https://google.com?q=short')).toBe('google.com?q=short');
-        expect(beautifyUrl('https://google.com?q=short&lang=en')).toBe('google.com?[..]ng=en');
+        expect(beautifyUrl('https://google.com?q=short&lang=en')).toBe('google.com?⋯t&lang=en');
     });
 
     it('shorten long query', () => {
-        expect(beautifyUrl('https://google.com?q=long&with=many&parameters=and-values')).toBe('google.com?[..]alues');
-        expect(beautifyUrl('https://google.com?q=long&with=very-long-last-value')).toBe('google.com?[..]value');
+        expect(beautifyUrl('https://google.com?q=long&with=many&parameters=and-values')).toBe('google.com?⋯nd-values');
+        expect(beautifyUrl('https://google.com?q=long&with=very-long-last-value')).toBe('google.com?⋯ast-value');
+    });
+});
+
+describe('path and query', () => {
+    it('drop trailing empty path and empty query', () => {
+        expect(beautifyUrl('https://google.com/?')).toBe('google.com');
+    });
+
+    it('keep short path and short query', () => {
+        expect(beautifyUrl('https://a.b.com/sp/?q=short')).toBe('a.b.com/sp/?q=short');
+    });
+
+    it('shorten long path and long query', () => {
+        expect(beautifyUrl('https://google.com/such-a-very/long/path/?q=long&with=many&parameters=and-values')).toBe(
+            'google.com/⋯/path?⋯nd-values'
+        );
     });
 });
 
