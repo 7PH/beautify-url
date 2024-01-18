@@ -18,11 +18,8 @@ import beautifyUrl from 'beautify-url';
 console.log(beautifyUrl('https://google.com'));
 // Outputs: 'google.com'
 
-console.log(beautifyUrl('ftp://google.com'));
-// Outputs: 'ftp://google.com'
-
 console.log(beautifyUrl('https://google.com?q=long&with=very-long-last-value'));
-// Outputs: 'google.com?[..]value'
+// Outputs: 'google.com?⋯ast-value'
 
 console.log(beautifyUrl('not an URL'));
 // Outputs: 'not an URL'
