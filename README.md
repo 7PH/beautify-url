@@ -1,4 +1,4 @@
-**beautify-url** is an opinionated, security-oriented library that transforms URLs into shorter, more aesthetic forms without compromising their functionality or security.
+**beautify-url** is an opinionated library that transforms your URLs into shorter, more aesthetic forms without compromising their functionality or security
 
 ## Installation
 

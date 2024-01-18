@@ -1,7 +1,7 @@
 {
   "name": "beautify-url",
-  "version": "0.0.1",
-  "description": "Opinionated security-oriented library that makes your URLs short and beautiful",
+  "version": "0.1.0",
+  "description": "Opinionated library that transforms your URLs into shorter, more aesthetic forms without compromising their functionality or security",
   "type": "module",
   "main": "./lib/src/index.js",
   "types": "./lib/src/index.d.ts",
