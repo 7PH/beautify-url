@@ -1,47 +1,51 @@
 {
-  "name": "beautify-url",
-  "version": "0.1.1",
-  "description": "Opinionated library that transforms your URLs into shorter, more aesthetic forms without compromising their functionality or security",
-  "type": "module",
-  "main": "./lib/index.js",
-  "types": "./lib/index.d.ts",
-  "files": [
-    "/lib",
-    "/dist"
-  ],
-  "scripts": {
-    "build:lib": "tsc",
-    "build:dist": "rm -rf dist; rollup -c",
-    "build": "npm run build:lib && npm run build:dist",
-    "size": "size-limit",
-    "lint": "eslint src/**/*.ts",
-    "lint-fix": "eslint --fix src/**/*.ts",
-    "test": "npm run lint && jest"
-  },
-  "keywords": [],
-  "author": "7PH <b.raymond@protonmail.com>",
-  "license": "ISC",
-  "devDependencies": {
-    "@babel/core": "^7.23.7",
-    "@babel/preset-env": "^7.23.8",
-    "@babel/preset-typescript": "^7.23.3",
-    "@size-limit/preset-small-lib": "^11.0.2",
-    "@types/jest": "^29.5.11",
-    "@typescript-eslint/eslint-plugin": "^6.19.0",
-    "@typescript-eslint/parser": "^6.19.0",
-    "eslint": "^8.56.0",
-    "jest": "^29.7.0",
-    "rollup-plugin-esbuild": "^6.1.0",
-    "size-limit": "^11.0.2",
-    "typescript": "^5.3.3"
-  },
-  "size-limit": [
-    {
-      "limit": "0.3 kB",
-      "path": "dist/beautify-url.min.js"
+    "name": "beautify-url",
+    "version": "0.2.0",
+    "description": "Opinionated library that transforms your URLs into shorter, more aesthetic forms without compromising their functionality or security",
+    "type": "module",
+    "main": "./lib/index.js",
+    "types": "./lib/index.d.ts",
+    "files": [
+        "/lib",
+        "/dist"
+    ],
+    "exports": {
+        "import": "./lib/index.js",
+        "require": "./dist/beautify-url.cjs"
+    },
+    "scripts": {
+        "build:lib": "tsc",
+        "build:dist": "rm -rf dist; rollup -c",
+        "build": "npm run build:lib && npm run build:dist",
+        "size": "size-limit",
+        "lint": "eslint src/**/*.ts",
+        "lint-fix": "eslint --fix src/**/*.ts",
+        "test": "npm run lint && jest"
+    },
+    "keywords": [],
+    "author": "7PH <b.raymond@protonmail.com>",
+    "license": "ISC",
+    "devDependencies": {
+        "@babel/core": "^7.23.7",
+        "@babel/preset-env": "^7.23.8",
+        "@babel/preset-typescript": "^7.23.3",
+        "@size-limit/preset-small-lib": "^11.0.2",
+        "@types/jest": "^29.5.11",
+        "@typescript-eslint/eslint-plugin": "^6.19.0",
+        "@typescript-eslint/parser": "^6.19.0",
+        "eslint": "^8.56.0",
+        "jest": "^29.7.0",
+        "rollup-plugin-esbuild": "^6.1.0",
+        "size-limit": "^11.0.2",
+        "typescript": "^5.3.3"
+    },
+    "size-limit": [
+        {
+            "limit": "0.3 kB",
+            "path": "dist/beautify-url.min.js"
+        }
+    ],
+    "dependencies": {
+        "beautify-url": "^0.1.1"
     }
-  ],
-  "dependencies": {
-    "beautify-url": "^0.1.1"
-  }
 }
