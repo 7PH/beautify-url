@@ -1,4 +1,4 @@
-import beautifyUrl from '.';
+import beautifyUrl from './index';
 
 describe('protocol', () => {
     it('drop https', () => {
