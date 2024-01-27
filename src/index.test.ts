@@ -20,6 +20,7 @@ describe('hostname', () => {
 
 describe('path', () => {
     it('drop trailing empty path', () => {
+        expect(beautifyUrl('https://google.com//')).toBe('google.com');
         expect(beautifyUrl('https://google.com/')).toBe('google.com');
     });
 

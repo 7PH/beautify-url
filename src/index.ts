@@ -30,8 +30,8 @@ function beautifyHostname(hostname: string) {
  * Beautify a given URL path
  */
 function beautifyPath(path: string) {
-    // Drop root path
-    if (path === '/') {
+    // Drop empty path
+    if (/^\/+$/.test(path)) {
         return '';
     }
 
