@@ -1,6 +1,6 @@
 {
     "name": "beautify-url",
-    "version": "0.2.1",
+    "version": "0.2.2",
     "description": "Opinionated library that transforms your URLs into shorter, more aesthetic forms without compromising their functionality or security",
     "type": "module",
     "main": "./lib/index.js",
